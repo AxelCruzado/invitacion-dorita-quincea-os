@@ -13,7 +13,7 @@ const datos = {
   zona: "America/Lima",
   direccion: "Santo Tomás, Mz. C, Lt. 18",
   referencia: "Por el parque Santo Thomas",
-  ciudad: "Chimbote, Áncash, Perú",
+  ciudad: "Nuevo Chimbote, Áncash, Perú",
   vestimenta: "Elegante",
   mapa: "https://www.google.com/maps?q=-9.121814,-78.515702",
   whatsappPapa: "51985618273",
