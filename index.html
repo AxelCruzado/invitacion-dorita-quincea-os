@@ -190,8 +190,8 @@
           <path d="M3 10 Q76 -2 118 10 T176 10 Q220 -2 297 10" />
         </svg>
       </div>
-      <section class="reveal">
-        <h2>La celebración</h2>
+      <section class="location reveal" aria-labelledby="reception-title">
+        <h2 id="reception-title">Recepción</h2>
         <picture class="event-photo garden-banner"
           ><source type="image/webp" srcset="/img/dorita-paisaje.webp" />
           <img
@@ -202,129 +202,15 @@
             loading="lazy"
             decoding="async"
         /></picture>
-        <dl class="cards">
-          <div>
-            <dt>
-              <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
-                <path d="M3 6h18v15H3z M3 10h18 M7 3v5 M17 3v5" /></svg
-              >Fecha
-            </dt>
-            <dd id="date"></dd>
-          </div>
-          <div>
-            <dt>
-              <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
-                <path d="M12 3a9 9 0 1 0 .01 0 M12 7v6l4 2" /></svg
-              >Hora
-            </dt>
-            <dd id="hour"></dd>
-          </div>
-          <div>
-            <dt>
-              <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
-                <path
-                  d="M12 22s8-8 8-13a8 8 0 0 0-16 0c0 5 8 13 8 13z M15 9a3 3 0 1 1-6 0 3 3 0 1 1 6 0"
-                /></svg
-              >Lugar
-            </dt>
-            <dd id="city"></dd>
-          </div>
-          <div>
-            <dt>
-              <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
-                <path
-                  d="M6 4l4-2 2 4 2-4 4 2 3 15-6 2-3-9-3 9-6-2z M9 4l3 8 3-8"
-                /></svg
-              >Vestimenta
-            </dt>
-            <dd id="dress"></dd>
+        <dl class="cards reception-details">
+          <div><dt>Fecha</dt><dd id="date"></dd></div>
+          <div><dt>Hora</dt><dd id="hour"></dd></div>
+          <div class="reception-address">
+            <dt>Dirección</dt>
+            <dd><span data-field="direccion"></span><br><span data-field="ciudad"></span></dd>
+            <dt>Referencia</dt><dd data-field="referencia"></dd>
           </div>
         </dl>
-      </section>
-      <div class="divider-wrap" aria-hidden="true">
-        <img
-          class="divider"
-          src="/img/divisor-dorado.png"
-          alt="Adorno floral con mariposa dorada"
-          loading="lazy"
-          decoding="async"
-        /><svg viewBox="0 0 300 20">
-          <path d="M3 10 Q76 -2 118 10 T176 10 Q220 -2 297 10" />
-        </svg>
-      </div>
-      <section class="reveal" aria-labelledby="gallery-title">
-        <h2 id="gallery-title">Mis quince en imágenes</h2>
-        <div class="photo-strip" data-lenis-prevent-horizontal>
-          <button type="button" class="photo-thumb" aria-haspopup="dialog">
-            <picture class="event-photo"
-              ><source type="image/webp" srcset="/img/dorita-espalda.webp" />
-              <img
-                src="/img/dorita-espalda.jpg"
-                alt="Dorita Natalyn de espaldas caminando hacia el arco con la cola del vestido extendida"
-                width="1122"
-                height="1402"
-                loading="lazy"
-                decoding="async"
-            /></picture>
-          </button>
-          <button type="button" class="photo-thumb" aria-haspopup="dialog">
-            <picture class="event-photo"
-              ><source type="image/webp" srcset="/img/dorita-giro.webp" />
-              <img
-                src="/img/dorita-giro.jpg"
-                alt="Dorita Natalyn girando con su vestido lila"
-                width="1122"
-                height="1402"
-                loading="lazy"
-                decoding="async"
-            /></picture>
-          </button>
-          <button type="button" class="photo-thumb" aria-haspopup="dialog">
-            <picture class="event-photo"
-              ><source type="image/webp" srcset="/img/dorita-banca.webp" />
-              <img
-                src="/img/dorita-banca.jpg"
-                alt="Dorita Natalyn sentada en una banca del jardín"
-                width="1122"
-                height="1402"
-                loading="lazy"
-                decoding="async"
-            /></picture>
-          </button>
-          <button type="button" class="photo-thumb" aria-haspopup="dialog">
-            <picture class="event-photo"
-              ><source type="image/webp" srcset="/img/dorita-vestido.webp" />
-              <img
-                src="/img/dorita-vestido.jpg"
-                alt="Detalle del corpiño y el encaje del vestido lila de Dorita Natalyn"
-                width="1122"
-                height="1402"
-                loading="lazy"
-                decoding="async"
-            /></picture>
-          </button>
-        </div>
-        <div class="photo-dots"></div>
-      </section>
-      <div class="divider-wrap" aria-hidden="true">
-        <img
-          class="divider"
-          src="/img/divisor-dorado.png"
-          alt="Adorno floral con mariposa dorada"
-          loading="lazy"
-          decoding="async"
-        /><svg viewBox="0 0 300 20">
-          <path d="M3 10 Q76 -2 118 10 T176 10 Q220 -2 297 10" />
-        </svg>
-      </div>
-      <section class="location reveal">
-        <h2>Cómo llegar</h2>
-        <p>
-          <strong data-field="direccion"></strong><br /><span
-            data-field="referencia"
-          ></span
-          ><br /><span data-field="ciudad"></span>
-        </p>
         <button id="map" type="button">Ver mapa aquí</button>
         <a class="button" id="map-link" target="_blank" rel="noopener"
           ><svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
@@ -333,6 +219,22 @@
             /></svg
           >Cómo llegar</a
         >
+      </section>
+      <div class="divider-wrap" aria-hidden="true">
+        <img
+          class="divider"
+          src="/img/divisor-dorado.png"
+          alt="Adorno floral con mariposa dorada"
+          loading="lazy"
+          decoding="async"
+        /><svg viewBox="0 0 300 20">
+          <path d="M3 10 Q76 -2 118 10 T176 10 Q220 -2 297 10" />
+        </svg>
+      </div>
+      <section class="dark reveal" aria-labelledby="dress-title">
+        <h2 id="dress-title">Dress Code</h2>
+        <p class="names" data-field="vestimenta"></p>
+        <p class="copy dress-note">Te pido que asistas con vestimenta elegante para celebrar juntos mis quince años.</p>
       </section>
       <div class="divider-wrap" aria-hidden="true">
         <img
@@ -395,24 +297,6 @@
       </svg>
     </button>
     <p class="status" id="status" role="status"></p>
-    <dialog
-      class="photo-viewer"
-      aria-label="Fotografía ampliada"
-      data-lenis-prevent
-    >
-      <button
-        type="button"
-        class="photo-close"
-        aria-label="Cerrar fotografía"
-        autofocus
-      >
-        ×
-      </button>
-      <div class="photo-stage" aria-live="polite"></div>
-      <div class="photo-nav">
-        <button type="button" aria-label="Foto anterior">‹</button
-        ><button type="button" aria-label="Foto siguiente">›</button>
-      </div>
-    </dialog>
+
   </body>
 </html>

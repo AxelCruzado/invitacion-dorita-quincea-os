@@ -106,3 +106,8 @@ html:has(.photo-viewer[open]){overflow:hidden}
   .photo-dots button::after{content:"";width:8px;height:8px;border-radius:50%;border:1px solid var(--dorado-oscuro)}
   .photo-dots [aria-current=true]::after{background:var(--dorado-oscuro)}
 }
+
+.cards.reception-details{grid-template-columns:repeat(2,minmax(0,1fr))}
+.reception-address{grid-column:1/-1}
+.reception-address dt:not(:first-child){margin-top:14px}
+.dress-note{margin:14px auto 0}

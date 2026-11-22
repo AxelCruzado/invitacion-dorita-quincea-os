@@ -1,5 +1,4 @@
 import "./style.css";
-import "./gallery.js";
 import { Howl } from "howler";
 
 const datos = {
@@ -40,14 +39,12 @@ const fechaLarga = formato({
 });
 el("cover-date").textContent =
   fechaLarga[0].toUpperCase() + fechaLarga.slice(1);
-el("date").textContent = diaMes + " de " + formato({ year: "numeric" });
+el("date").textContent = el("cover-date").textContent;
 el("hour").textContent = formato({
   hour: "numeric",
   minute: "2-digit",
   hour12: true,
 }).replace(/p\.\s*m\./i, "p.m.");
-el("city").textContent = datos.ciudad.split(",")[0];
-el("dress").textContent = datos.vestimenta;
 el("map-link").href = datos.mapa;
 const mapa = new URL(datos.mapa);
 mapa.searchParams.set("output", "embed");
