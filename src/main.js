@@ -1,8 +1,9 @@
 import "./style.css";
+import "./gallery.js";
 import { Howl } from "howler";
 
 const datos = {
-  nombre: "Dorita",
+  nombre: "Dorita Natalyn",
   apellidos: "Calderon Rosales",
   papa: "Erlyn Calderon",
   mama: "Judith Rosales",
@@ -18,7 +19,6 @@ const datos = {
   whatsappPapa: "51985618273",
   whatsappMama: "51944667762",
   musica: "/audio/musica.mp3", // Reemplaza por el nombre de tu canción.
-  foto: "/img/dorita.jpg", // Ejemplo: "dorita.jpg". El monograma ocupa el marco mientras esté vacío.
 };
 // Personalización de textos, fecha peruana y enlaces.
 const el = (id) => document.getElementById(id);
@@ -61,7 +61,7 @@ el("map").addEventListener("click", () => {
 const mensaje =
   "Hola, confirmo mi asistencia a los XV años de " +
   datos.nombre +
-  " Natalyn " +
+  " " +
   datos.apellidos +
   " el " +
   diaMes +
@@ -79,7 +79,7 @@ for (const [id, rol, nombre, numero] of [
   el(id).href =
     "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
 }
-el("photo").src = datos.foto;
+
 // Sincronizar con la hora real incluso después de volver desde WhatsApp.
 const cifras = el("timer").querySelectorAll("strong");
 let reloj;
@@ -117,6 +117,11 @@ const fallback =
   );
 function replaceMissing(image) {
   if (!(image instanceof HTMLImageElement) || image.src === fallback) return;
+  const source = image.closest("picture")?.querySelector("source");
+  if (source) {
+    source.remove();
+    return;
+  }
   image.classList.add("fallback");
   image.src = fallback;
 }

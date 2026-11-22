@@ -78,3 +78,31 @@ footer{padding:24px}.music,.status{position:fixed;z-index:5;right:16px}.music{bo
 .fragment:not([style]){visibility:hidden}
 #dust canvas{width:100%;height:100%}
 .firefly{position:absolute;bottom:0;width:4px;height:4px;border-radius:50%;background:var(--dorado-claro);box-shadow:0 0 7px 2px #d4af3777}
+
+/* Fotografías de la invitación */
+.event-photo{display:block}
+.event-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.arch-photo{width:clamp(145px,24vw,218px);aspect-ratio:4/5;margin:6px auto 15px;border:2px solid var(--dorado);border-radius:50% 50% 12px 12px / 40% 40% 12px 12px;overflow:hidden;box-shadow:0 0 17px #d4af3740}
+.arch-photo img{object-position:center top}
+.portrait{overflow:hidden}.portrait picture{height:100%;border-radius:inherit;overflow:hidden}.portrait img{object-position:center 20%}
+.garden-banner{width:100%;aspect-ratio:16/9;border:1px solid var(--dorado);border-radius:14px;overflow:hidden;margin-bottom:18px}
+.photo-strip{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.photo-thumb{display:block;background:var(--lila-claro);padding:0;overflow:hidden;border:1px solid var(--dorado);border-radius:14px}
+.photo-thumb:hover{transform:none}.photo-thumb picture{aspect-ratio:4/5}
+.photo-dots{display:none}
+.photo-viewer{padding:0;border:0;background:transparent;color:var(--crema);max-width:96vw;max-height:98dvh;overflow:visible}
+.photo-viewer::backdrop{background:rgb(25 13 32 / .92)}
+html:has(.photo-viewer[open]){overflow:hidden}
+.photo-stage picture,.photo-stage img{width:auto;height:auto;max-width:90vw;max-height:72dvh;object-fit:contain;margin:auto}
+.photo-viewer button{width:46px;height:46px;padding:0;font-size:1.65rem}
+.photo-close{display:flex;margin:0 0 6px auto}.photo-nav{display:flex;justify-content:center;gap:18px;margin:8px auto 0}
+@media(min-width:701px){.devotional{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:22px}.devotional .portrait-wrap{margin:0}}
+@media(max-width:700px){
+  .photo-strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none}
+  .photo-thumb{flex:0 0 80%;scroll-snap-align:start}
+  .photo-strip::after{content:"";flex:0 0 calc(20% - 12px)}
+  .photo-dots{display:flex;justify-content:center}
+  .photo-dots button{min-height:44px;width:30px;padding:0;background:transparent;border:0}
+  .photo-dots button::after{content:"";width:8px;height:8px;border-radius:50%;border:1px solid var(--dorado-oscuro)}
+  .photo-dots [aria-current=true]::after{background:var(--dorado-oscuro)}
+}
