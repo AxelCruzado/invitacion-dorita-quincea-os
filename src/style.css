@@ -1,0 +1,80 @@
+@font-face{font-family:'Great Vibes';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/great-vibes-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/cormorant-garamond-latin-500-normal.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/cormorant-garamond-latin-600-normal.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:swap;src:url('/fonts/cormorant-garamond-latin-500-italic.woff2') format('woff2')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/montserrat-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/montserrat-latin-700-normal.woff2') format('woff2')}
+:root {
+  --lila-claro:#E6D9F5; --lila:#C9B1E8; --morado:#8E6BBF; --morado-profundo:#4B2E83;
+  --dorado:#D4AF37; --dorado-claro:#F3E2A0; --dorado-oscuro:#A67C00; --crema:#FFF8E7;
+  --metal:linear-gradient(110deg,#a67c00,#f3e2a0 34%,#d4af37 61%,#fff0b4 82%,#bd9327);
+  --serif:"Cormorant Garamond",Georgia,serif; --script:"Great Vibes",cursive;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#302037;color:#43273e;text-align:center;font:400 1rem/1.7 Montserrat,sans-serif}
+body.sealed{overflow:hidden}
+[hidden]{display:none!important}
+img{display:block;object-fit:cover}
+button,.button{font:600 .85rem Montserrat,sans-serif;min-height:46px;padding:13px 23px;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;text-decoration:none;border:1px solid var(--dorado-claro);border-radius:32px;color:#40213c;background:var(--metal)}
+button:focus-visible,a:focus-visible{outline:3px solid var(--morado);outline-offset:4px}
+button:hover,.button:hover{transform:translateY(-2px)}
+h1,h2,h3,p,figure,blockquote,dl,dd{margin:0}
+h2,h3,.names{font:500 clamp(2.1rem,6vw,3.3rem)/1.12 var(--serif)}
+h2{margin-bottom:24px;text-wrap:balance}
+h3{font-size:1.8rem}
+.kicker,.cite,dt,footer{text-transform:uppercase;letter-spacing:.19em;font-size:.69rem;font-weight:700}
+.gate{position:fixed;inset:0;background:radial-gradient(ellipse,#69406b,#26132d 84%);color:var(--crema);z-index:9;display:grid;place-items:center;overflow:hidden}
+.gate::after{content:"";position:absolute;inset:14px;border:1px solid #d4af3770;outline:1px solid #d4af3733;outline-offset:-5px;pointer-events:none}
+.gate-scene{position:absolute;width:min(100vw,69svh,600px);aspect-ratio:2/3;perspective:900px;mask-image:linear-gradient(transparent,#000 10%,#000 89%,transparent)}
+.gate-art{width:100%;height:100%}
+.paper,.lifted-flap,.seal{position:absolute}
+.paper,.lifted-flap{inset:0;clip-path:polygon(3% 26%,97% 26%,94% 32%,51% 56%,46% 54%,4% 32%)}
+.paper{background:radial-gradient(ellipse,var(--crema),var(--dorado));opacity:0}
+.lifted-flap{background:url('/img/sobre-lila-sello-dorado.png') center/cover;transform-origin:center 26%;backface-visibility:hidden}
+.seal{left:50%;top:48%;transform:translate(-50%,-50%);width:30%;aspect-ratio:1;display:grid;place-items:center;background:var(--metal);border:4px double #9a650c;border-radius:48%;color:#9b620d;font:clamp(2rem,10vw,4.2rem)/1 Georgia;box-shadow:0 3px 12px #34121a66}
+.gate-inner{position:relative;pointer-events:none;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;height:100%;width:100%;padding:clamp(30px,6svh,76px) 20px}
+.gate h2{font:400 clamp(4rem,14vw,7rem)/1.15 var(--script);color:var(--dorado-claro);text-shadow:0 3px 12px #3c1c30}
+.open-actions{margin-top:auto;pointer-events:auto}
+#skip{position:fixed;z-index:14;bottom:22px;right:20px;background:#3b2144;color:var(--crema)}
+#flight,#dust,.air{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+#flight,#dust{z-index:11}.air{z-index:2}
+main{position:relative;max-width:850px;margin:auto;overflow:hidden;background:linear-gradient(130deg,#fff8e7,#f2e6f7 48%,#fff5e5)}
+.hero{position:relative;isolation:isolate;overflow:hidden;min-height:min(89svh,850px);display:flex;flex-direction:column;justify-content:end;align-items:center;padding:62px 18px;color:var(--crema);background:var(--morado-profundo)}
+.castle-art,.hills,.flowers,.hero::after{position:absolute;inset:-8% 0;width:100%;height:116%;z-index:-4;object-position:50% 45%}
+.hills,.flowers{background:url('/img/fondo-torre.jpg') center 45%/cover;pointer-events:none;mask-image:linear-gradient(transparent 55%,black 75%,transparent 90%);z-index:-3}
+.flowers{mask-image:linear-gradient(transparent 82%,black);z-index:-2}
+.hero::after{content:"";z-index:-1;background:linear-gradient(transparent 21%,#36193988 55%,#2e1638e8)}
+h1{font:400 clamp(4.1rem,15vw,8rem)/1.12 var(--script);margin:12px 0}
+h1 b{font-weight:400}h1>span{display:block;font-size:.5em}
+h1 b,h1>span,.gold-char{background:var(--metal);background-size:210% 100%;background-clip:text;color:transparent}
+.gold-char{position:relative}.gold-char::after{content:attr(data-letter);position:absolute;inset:0;color:var(--crema);opacity:0;animation:glimmer 5s infinite;animation-delay:var(--delay)}
+@keyframes glimmer{8%{opacity:.85}22%,100%{opacity:0}}
+.orn{color:var(--dorado);font-size:1.5rem}.hero .kicker{color:var(--dorado-claro)}
+section{position:relative;padding:56px clamp(21px,7vw,76px)}
+section.dark{color:var(--crema);background:linear-gradient(145deg,#4b2e65,#382246)}
+.copy,.verse{max-width:45ch;margin:0 auto}.verse,.closing p{font:italic 500 1.65rem/1.35 var(--serif)}
+.cite{margin:12px 0 20px}.blessing{margin-top:24px}
+.portrait-wrap{position:relative;display:grid;place-items:center;width:225px;height:196px;margin:0 auto 26px}
+.portrait{width:129px;height:159px;border-radius:50%;padding:4px;background:var(--metal)}
+.portrait img{width:100%;height:100%;border-radius:inherit}
+.portrait-frame,.card-frame{pointer-events:none;position:absolute;inset:0;width:100%;height:100%;object-fit:fill}
+.frame,.cards div,.timer div{border:1px solid transparent;background:linear-gradient(135deg,#f9f2fc,#f1e1f3) padding-box,var(--metal) border-box;border-radius:14px;padding:20px 10px}
+.frame{position:relative;max-width:380px;margin:22px auto 0;padding:46px 32px}
+.timer,.cards{display:grid;gap:8px;grid-template-columns:repeat(4,minmax(0,1fr))}
+.timer div{background:linear-gradient(120deg,#5c4273,#503260) padding-box,var(--metal) border-box;padding:14px 2px}
+.timer strong{display:block;font:600 clamp(2rem,7vw,3.3rem)/1 var(--serif);color:var(--dorado-claro)}
+.timer small{font-size:.72rem}.cards dd{font:600 1.35rem/1.25 var(--serif)}
+.icon{width:23px;height:23px;stroke:currentColor;fill:none;stroke-width:1.5}.cards .icon{display:block;margin:0 auto 8px}
+.divider-wrap{position:relative;margin:5px auto;width:min(64%,340px)}.divider{width:100%}.divider-wrap svg{position:absolute;inset:43% 0;width:100%;fill:none;stroke:var(--dorado);stroke-width:1.3}
+.map{width:100%;height:220px;border:1px solid var(--dorado);margin:20px 0}
+.location button,.location .button,.actions{margin-top:20px}.actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+footer{padding:24px}.music,.status{position:fixed;z-index:5;right:16px}.music{bottom:16px;width:48px;padding:0}.status{bottom:74px;color:var(--crema);background:#452b4d;border-radius:12px}.status:not(:empty){padding:8px}
+.decoration{position:absolute;pointer-events:none}.fallback{background:linear-gradient(135deg,var(--lila-claro),var(--lila))}
+@keyframes pulse{50%{opacity:.85}}
+@media(prefers-reduced-motion:no-preference){.open-actions button,.actions .button{animation:pulse 4s ease-in-out infinite}.offscreen *{animation-play-state:paused!important}}
+@media(max-width:600px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.actions .button{width:100%}}
+@media(prefers-reduced-motion:reduce){*,*::after{animation:none!important;scroll-behavior:auto!important}}
+.fragment{position:absolute;top:0;left:0;width:5px;height:5px;background:var(--dorado-claro);border-radius:50%;opacity:1}
+.fragment:not([style]){visibility:hidden}
+#dust canvas{width:100%;height:100%}
+.firefly{position:absolute;bottom:0;width:4px;height:4px;border-radius:50%;background:var(--dorado-claro);box-shadow:0 0 7px 2px #d4af3777}
