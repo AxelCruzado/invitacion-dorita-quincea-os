@@ -1,4 +1,5 @@
 import "./style.css";
+import "./gallery.js";
 import { Howl } from "howler";
 
 const datos = {
@@ -11,7 +12,6 @@ const datos = {
   mapa: "https://www.google.com/maps?q=-9.121814,-78.515702",
   whatsappPapa: "51985618273", whatsappMama: "51944667762",
   musica: "/audio/musica.mp3", // Reemplaza por el nombre de tu canción.
-  foto: "/img/dorita.jpg" // Ejemplo: "dorita.jpg". El monograma ocupa el marco mientras esté vacío.
 };
 // Personalización de textos, fecha peruana y enlaces.
 const el = id => document.getElementById(id);
@@ -38,7 +38,7 @@ for (const [id, rol, nombre, numero] of [
   el(id).textContent = rol + " " + nombre.split(" ")[0] + " · " + numero.slice(-9).match(/.{3}/g).join(" ");
   el(id).href = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
 }
-el("photo").src = datos.foto;
+
 // Sincronizar con la hora real incluso después de volver desde WhatsApp.
 const cifras = el("timer").querySelectorAll("strong");
 let reloj;
@@ -61,6 +61,11 @@ document.addEventListener("visibilitychange", () => { if (!document.hidden) actu
 const fallback = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="320" height="240"><defs><linearGradient id="g"><stop stop-color="#e6d9f5"/><stop offset="1" stop-color="#c9b1e8"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#g)"/></svg>');
 function replaceMissing(image) {
   if (!(image instanceof HTMLImageElement) || image.src === fallback) return;
+  const source = image.closest("picture")?.querySelector("source");
+  if (source) {
+    source.remove();
+    return;
+  }
   image.classList.add("fallback");
   image.src = fallback;
 }
