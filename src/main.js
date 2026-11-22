@@ -3,7 +3,7 @@ import "./gallery.js";
 import { Howl } from "howler";
 
 const datos = {
-  nombre: "Dorita", apellidos: "Calderon Rosales",
+  nombre: "Dorita Natalyn", apellidos: "Calderon Rosales",
   papa: "Erlyn Calderon", mama: "Judith Rosales",
   padrino: "[Nombre]", madrina: "[Nombre]",
   fecha: "2026-12-16T20:00:00-05:00", zona: "America/Lima",
@@ -31,7 +31,7 @@ el("map-link").href = datos.mapa;
 const mapa = new URL(datos.mapa);
 mapa.searchParams.set("output", "embed");
 el("map").addEventListener("click", () => { const frame = document.createElement("iframe"); frame.title = "Mapa del lugar"; frame.className = "map"; frame.src = mapa.href; el("map").replaceWith(frame); });
-const mensaje = "Hola, confirmo mi asistencia a los XV años de " + datos.nombre + " Natalyn " + datos.apellidos + " el " + diaMes + ". Mi nombre es: ";
+const mensaje = "Hola, confirmo mi asistencia a los XV años de " + datos.nombre + " " + datos.apellidos + " el " + diaMes + ". Mi nombre es: ";
 for (const [id, rol, nombre, numero] of [
   ["dad","papá",datos.papa,datos.whatsappPapa], ["mom","mamá",datos.mama,datos.whatsappMama]
 ]) {
