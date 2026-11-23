@@ -95,6 +95,14 @@ export function decorate() {
     const view = new IntersectionObserver(entries=>entries.forEach(e=>e.target.classList.toggle("offscreen",!e.isIntersecting)));
     document.querySelectorAll("header,section").forEach(node=>view.observe(node));
     document.querySelectorAll(".reveal").forEach(node=>gsap.from(node,{opacity:0,y:22,scale:.985,duration:.65,scrollTrigger:{trigger:node,start:"top 96%",once:true}}));
+    gsap.from(".attire-look", {
+      opacity: 0, y: 14, duration: .55, stagger: .12,
+      scrollTrigger: { trigger: ".attire-columns", start: "top 95%", once: true }
+    });
+    gsap.from(".attire-subtitle path", {
+      drawSVG: "0%", duration: .7,
+      scrollTrigger: { trigger: ".attire-subtitle", start: "top 95%", once: true }
+    });
     document.querySelectorAll(".divider-wrap path").forEach(path=>gsap.from(path,{drawSVG:"0%",duration:1.3,scrollTrigger:{trigger:path,start:"top 96%",once:true}}));
     [".castle-art",".hills",".flowers"].forEach((selector,i)=>gsap.to(selector,{y:16+i*12,ease:"none",scrollTrigger:{trigger:"#cover",start:"top top",end:"bottom top",scrub:true}}));
     const air=document.querySelector("#air");
