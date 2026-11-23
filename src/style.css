@@ -19,7 +19,9 @@ button,.button{font:600 .85rem Montserrat,sans-serif;min-height:46px;padding:13p
 button:focus-visible,a:focus-visible{outline:3px solid var(--morado);outline-offset:4px}
 button:hover,.button:hover{transform:translateY(-2px)}
 h1,h2,h3,p,figure,blockquote,dl,dd{margin:0}
-h2,h3,.names{font:500 clamp(2.1rem,6vw,3.3rem)/1.12 var(--serif)}
+h2,h3{font:500 clamp(2.1rem,6vw,3.3rem)/1.12 var(--serif)}
+.family .names{font:400 clamp(2.65rem,8vw,3.75rem)/1.18 var(--script);color:var(--morado-profundo)}
+.family .names i{font:italic 500 1.35rem/1.1 var(--serif)}
 h2{margin-bottom:24px;text-wrap:balance}
 h3{font-size:1.8rem}
 .kicker,.cite,dt,footer{text-transform:uppercase;letter-spacing:.19em;font-size:.69rem;font-weight:700}
